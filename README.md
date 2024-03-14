@@ -52,6 +52,28 @@ The base URL for all endpoints is: `https://sixsense-task-backend.onrender.com`
   }
 
 
+### 3. Get User Details
+
+- **API**: `Base_Url/api/userdetails/{userID}`
+- **Method**: `GET`
+- **Response Example**:
+  ```json
+  {
+      "success": true,
+      "result": {
+          "_id": "65f256fd197a23a344dd4fc7",
+          "firstName": "Biplob Hasan",
+          "lastName": "Emon",
+          "email": "biplobemo75945@gmail.com",
+          "phone": "+880 1883049802",
+          "status": "active",
+          "createdAt": "2024-03-14T01:46:37.356Z",
+          "updatedAt": "2024-03-14T01:46:37.356Z",
+          "__v": 0
+      }
+  }
+
+
 
 ### 4. Update User Information without Email
 
