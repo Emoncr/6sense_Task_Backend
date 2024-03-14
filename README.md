@@ -19,4 +19,14 @@ The base URL for all endpoints is: `https://sixsense-task-backend.onrender.com`
       "phone": "+880 1883049802"  
   }
 
+
+### 5. Update User Status
+
+- **API**: `Base_Url/api/user/status/update/{userID}`
+- **Method**: `PATCH`
+- **Request Body**:
+  ```json
+  {
+      "status": "blocked"
+  }
   
