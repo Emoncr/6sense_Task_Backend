@@ -95,4 +95,9 @@ The base URL for all endpoints is: `https://sixsense-task-backend.onrender.com`
   {
       "status": "blocked"
   }
-  
+- OR
+- **Request Body**:
+  ```json
+  {
+      "status": "active"
+  }
