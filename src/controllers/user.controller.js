@@ -66,17 +66,23 @@ export const updateUser = async (req, res, next) => {
   }
 };
 
-
-
-//  UPDATE USER INFORMATION
+//  UPDATE USER  STATUS INFORMATION
 export const updateUserStatus = async (req, res, next) => {
   try {
     const userId = req.params.id;
     const userStatus = req.body.status;
-
-    const updatedStatus = await User.findByIdAndUpdate(userId, {status:req.body.status}, {
-      new: true,
-    });
+    if (userStatus !== "active" && userStatus !== "blocked")
+      return next(
+        throwError(401, "You can't set value except 'active' or 'blocked'")
+      );
+    const updatedStatus = await User.findByIdAndUpdate(
+      userId,
+      { status: req.body.status },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
 
     res.status(200).json({
       success: true,
@@ -86,14 +92,3 @@ export const updateUserStatus = async (req, res, next) => {
     next(error);
   }
 };
-
-
-
-
-
-
-
-
-
-
-
