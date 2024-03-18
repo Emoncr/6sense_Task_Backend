@@ -92,3 +92,21 @@ export const updateUserStatus = async (req, res, next) => {
     next(error);
   }
 };
+
+// DELETE USER FROM DATABASE
+export const deleteUser = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+
+    const deletedUser = await User.findByIdAndDelete(userId);
+
+    if (!deletedUser) return next(throwError(404, "User not found!"));
+
+    res.status(200).json({
+      success: true,
+      deletedUser,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
