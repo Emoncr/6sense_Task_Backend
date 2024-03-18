@@ -15,7 +15,10 @@ if (process.env.NODE_ENV === "local") {
 } else {
   app.use(
     cors({
-      origin: "*",
+      origin: [
+        "http://localhost:3000",
+        "https://6sense-task-frontend.vercel.app",
+      ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
@@ -23,22 +26,16 @@ if (process.env.NODE_ENV === "local") {
 }
 
 // Using Express Middlewares
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-
+app.use(express.json({ limit: "16kb" }));
+app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 // Routes Import
-import userRouter  from  "../src/routes/user.route.js"
-
-
+import userRouter from "../src/routes/user.route.js";
 
 //Routes Declaration
-app.use("/api", userRouter )
-
-
+app.use("/api", userRouter);
 
 // Handling error useing middleware
-app.use(apiError)
-
+app.use(apiError);
 
 export { app };
