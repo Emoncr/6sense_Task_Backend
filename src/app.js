@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === "local") {
       origin: [
         "http://localhost:3000",
         "https://6sense-task-frontend.vercel.app",
+        "https://sixsense-task-frontend.onrender.com",
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
