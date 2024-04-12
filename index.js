@@ -14,8 +14,3 @@ connectDB()
     console.log("MONGO db connection failed !!! ", err); 
 })
 
-
-// P58PnnV4R86oTyR2     biplobemon75945
-
-
-// mongodb+srv://biplobemon75945:P58PnnV4R86oTyR2@cluster1.quykjvm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
